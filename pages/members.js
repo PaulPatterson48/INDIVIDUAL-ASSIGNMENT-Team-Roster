@@ -6,8 +6,9 @@ import { getMembers } from '../api/memberData';
 import { useAuth } from '../utils/context/authContext';
 import MemberCard from '../components/MemberCard';
 
-function Home() {
+function ShowMembers() {
   const [members, setMembers] = useState([]);
+
   const { user } = useAuth();
 
   const getAllTheMembers = () => {
@@ -19,23 +20,17 @@ function Home() {
   }, []);
 
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <Link href="member/new" passHref>
+    <div className="text-center my-4">
+      <Link href="/team/new" passHref>
         <Button>Add A Member</Button>
       </Link>
-      {members.map((member) => (
-        <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
-      ))}
+      <div className="d-flex flex-wrap">
+        {members.map((member) => (
+          <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
+        ))}
+      </div>
     </div>
   );
 }
 
-export default Home;
+export default ShowMembers;
