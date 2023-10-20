@@ -21,7 +21,7 @@ function ShowMembers() {
 
   return (
     <div className="text-center my-4">
-      <Link href="/team/new" passHref>
+      <Link href="/member/new" passHref>
         <Button>Add A Member</Button>
       </Link>
       <div className="d-flex flex-wrap">
