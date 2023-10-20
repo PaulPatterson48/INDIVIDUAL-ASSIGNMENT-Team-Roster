@@ -22,9 +22,9 @@ export default function NavBar() {
               <Nav.Link>Roster</Nav.Link>
             </Link>
             <Link passHref href="/member/new">
-              <Nav.Link>Create Member</Nav.Link>
+              <Nav.Link>Add A Member</Nav.Link>
             </Link>
-            <Button type="button" className="btn-danger" onClick={signOut}>Sign Out</Button>
+            <Button type="button" className="btn-danger" onClick={signOut}>Log Out</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

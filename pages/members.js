@@ -26,7 +26,7 @@ function ShowMembers() {
       </Link>
       <div className="d-flex flex-wrap">
         {members.map((member) => (
-          <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
+          <MemberCard key={member.firebaseKey} obj={member} onUpdate={getAllTheMembers} />
         ))}
       </div>
     </div>

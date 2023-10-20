@@ -18,7 +18,10 @@ export default function ViewMembers() {
       <div className="d-flex flex-column">
         <img src={membersDetails.image} alt={membersDetails.name} style={{ width: '300px' }} />
       </div>
-      role: <p>{membersDetails.role || ''}</p>
+
+      <div>
+        <h5> {membersDetails.name || ''}  <p>{membersDetails.role || ''}</p></h5>
+      </div>
     </div>
   );
 }
