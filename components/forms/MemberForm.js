@@ -12,7 +12,6 @@ const initialState = {
   image: '',
   name: '',
   role: '',
-
 };
 
 function MemberForm({ obj }) {
@@ -35,7 +34,7 @@ function MemberForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateMember(formInput).then(() => router.push(`/members/${obj.firebaseKey}`));
+      updateMember(formInput).then(() => router.push('/members'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMember(payload).then(({ name }) => {
@@ -73,17 +72,19 @@ function MemberForm({ obj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput3" label="Member Role" clannName="mb-3">
+      <FloatingLabel controlId="floatingInput3" label="Member Role" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter Roll"
+          placeholder="Enter Role"
           name="role"
           value={formInput.role}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-      <Button type="submit">{obj.firebaseKey ? 'Update Member' : 'Create Member'}</Button>
+
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team Member</Button>
+      console.warn(submit);
     </Form>
   );
 }
