@@ -17,6 +17,7 @@ function MemberCard({ memberObj, onUpdate }) {
       <Card.Img variant="top" src={memberObj.image} alt={memberObj.name} style={{ height: '400px ' }} />
       <Card.Body>
         <Card.Title>{memberObj.name}</Card.Title>
+        <p className="card-text bold">{memberObj.role}</p>
         <Link href={`/member/edit/${memberObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
@@ -29,6 +30,7 @@ function MemberCard({ memberObj, onUpdate }) {
 MemberCard.propTypes = {
   memberObj: PropTypes.shape({
     image: PropTypes.string,
+    role: PropTypes.string,
     firebaseKey: PropTypes.string,
     name: PropTypes.string,
     uid: PropTypes.string,

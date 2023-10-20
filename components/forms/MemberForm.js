@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { FloatingLabel, Button } from 'react-bootstrap';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useAuth } from '../../utils/context/authContext';
-import {
-  createMember, updateMember,
-} from '../../api/memberData';
+import { createMember, updateMember } from '../../api/memberData';
 
 const initialState = {
   image: '',
@@ -34,7 +33,7 @@ function MemberForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateMember(formInput).then(() => router.push('/members'));
+      updateMember(formInput).then(() => router.push(`/member/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMember(payload).then(({ name }) => {
@@ -84,7 +83,6 @@ function MemberForm({ obj }) {
       </FloatingLabel>
 
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team Member</Button>
-      console.warn(submit);
     </Form>
   );
 }
