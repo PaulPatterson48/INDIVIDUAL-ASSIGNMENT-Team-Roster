@@ -21,3 +21,12 @@ a {
 body {
   background-color: #88effd;
 }
+.card-group{
+  justify-content: center;
+}
+.card-grid, .card{
+  padding: 5px 5px !important;
+  height: auto !important;
+  justify-content: center;
+  margin: 1rem;
+}
