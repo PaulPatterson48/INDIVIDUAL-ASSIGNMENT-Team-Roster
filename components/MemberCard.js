@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteMember } from '../api/memberData';
 
@@ -15,7 +14,7 @@ function MemberCard({ memberObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px ' }}>
 
-      <Card.Img variant="top" src={memberObj.image} alt={memberObj.name} style={{ height: '200px ' }} />
+      <Card.Img variant="top" src={memberObj?.image} alt={memberObj.name} style={{ height: '200px ' }} />
       <Card.Body>
         <Card.Title>{memberObj.name}</Card.Title>
         <p className="card-text bold">{memberObj.role}</p>

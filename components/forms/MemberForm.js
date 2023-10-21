@@ -14,6 +14,7 @@ const initialState = {
 };
 
 function MemberForm({ obj }) {
+  console.warn(obj);
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
   const { user } = useAuth();
