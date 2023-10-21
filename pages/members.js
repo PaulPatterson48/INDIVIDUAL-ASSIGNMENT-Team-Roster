@@ -20,11 +20,13 @@ function ShowMembers() {
   }, []);
 
   return (
-    <div className="text-center my-4">
-      <Link href="/member/new" passHref>
-        <Button>Add A Member</Button>
-      </Link>
-      <div className="d-flex flex-wrap">
+    <div className="d-flex flex-wrap">
+      <div className="text-center my-4">
+
+        <Link href="/member/new" passHref>
+          <Button>Add A Member</Button>
+        </Link>
+
         {members.map((member) => (
           <MemberCard key={member.firebaseKey} obj={member} onUpdate={getAllTheMembers} />
         ))}
