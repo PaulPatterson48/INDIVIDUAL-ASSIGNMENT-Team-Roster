@@ -20,11 +20,12 @@ function Home() {
 
   return (
     <div className="text-center my-4">
+      <h1>Team</h1>
       <Link href="member/new" passHref>
         <Button>Add A Member</Button>
       </Link>
       <div className="d-flex flex-wrap">
-        {members.map((member) => (
+        {members?.map((member) => (
           <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
         ))}
       </div>

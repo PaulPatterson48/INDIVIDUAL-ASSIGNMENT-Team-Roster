@@ -27,7 +27,7 @@ function ShowMembers() {
           <Button>Add A Member</Button>
         </Link>
 
-        {members.map((member) => (
+        {members?.map((member) => (
           <MemberCard key={member.firebaseKey} obj={member} onUpdate={getAllTheMembers} />
         ))}
       </div>
